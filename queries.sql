@@ -51,3 +51,29 @@ WHERE
     cogs IS NULL
     OR
     total_sale IS NULL;
+
+SELECT 
+  *
+FROM retail_sales
+WHERE 
+    category = 'Clothing'
+    AND 
+    TO_CHAR(sale_date, 'YYYY-MM') = '2022-11'
+    AND
+    quantity >= 4
+
+
+SELECT 
+    category,
+    SUM(total_sale) as net_sale,
+    COUNT(*) as total_orders
+FROM retail_sales
+GROUP BY 1
+
+SELECT
+    ROUND(AVG(age), 2) as avg_age
+FROM retail_sales
+WHERE category = 'Beauty'
+
+
+
