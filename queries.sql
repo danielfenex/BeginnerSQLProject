@@ -72,8 +72,28 @@ GROUP BY 1
 
 SELECT
     ROUND(AVG(age), 2) as avg_age
+
+
+SELECT
+    ROUND(AVG(age), 2) as avg_age
 FROM retail_sales
 WHERE category = 'Beauty'
 
 
+
+SELECT * FROM retail_sales
+WHERE total_sale > 1000
+
+
+
+SELECT 
+    category,
+    gender,
+    COUNT(*) as total_trans
+FROM retail_sales
+GROUP 
+    BY 
+    category,
+    gender
+ORDER BY 1
 
